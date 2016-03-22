@@ -21,3 +21,7 @@ export class AppComponent {
     console.log(clickedKeg);
   }
 }
+
+
+
+/////Keg model, new Keg, and Keg list components have been started but are not updated in their entirety because I was following our to do list and it's a bit out of order./////
