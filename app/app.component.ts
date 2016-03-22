@@ -12,9 +12,9 @@ export class AppComponent {
   public kegs: Keg[];
   constructor(){
     this.kegs = [
-      new Keg("Widmer Brewery", "Omission IPA", 127),
-      new Keg("Rogue Brewery", "Arrogant Bastard Ale", 97),
-      new Keg("10 Barrel", "Sinistor Black Ale", 20)
+      new Keg("Widmer Brewery", "Omission IPA", "IPA", 127),
+      new Keg("Rogue Brewery", "Arrogant Bastard Ale", "Ale", 97),
+      new Keg("10 Barrel", "Sinistor Black Ale", "Ale" 20)
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {
@@ -24,7 +24,7 @@ export class AppComponent {
 
 export class Keg {
   public pints: number = 127;
-  constructor(public brewerName: string, public beerType: string, public kegLevel: number) {
+  constructor(public brewerName: string, public beerName: string, public beerType: string, public kegLevel: number) {
 
   }
 }
