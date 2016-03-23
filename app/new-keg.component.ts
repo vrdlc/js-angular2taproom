@@ -20,9 +20,9 @@ export class NewKegComponent {
     constructor(){
       this.onAddNewKeg = new EventEmitter();
     }
-    addKeg(newBrewer: HTMLInputElement, newBeer: HTMLInputElement, newType: HTMLInputElement) {
-      var newKeg: Keg = new Keg(newBrewer.value, newBeer.value, newType.value);
-      this.onAddNewKeg.emit(newKeg);
-      console.log(newKeg);
+    addKeg(brewerName: HTMLInputElement, beerName: HTMLInputElement, beerType: HTMLInputElement) {
+
+      this.onAddNewKeg.emit([brewerName.value, beerName.value, beerType.value]);
+
     }
 }

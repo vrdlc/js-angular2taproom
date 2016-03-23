@@ -28,7 +28,6 @@ export class KegListComponent {
   createKeg(brewerName: string, beerName: string, beerType: string, kegLevel: number): void {
     this.kegList.push(
       new Keg(brewerName, beerName, beerType, kegLevel)
-
     ); console.log(this.kegList)
   }
   // onChange(filterOption){
