@@ -1,8 +1,8 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
-import { EditKegDetailsComponent } from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
+import { ShowKegProgressComponent } from './show-keg-progress.component';
 import { EmptyPipe } from './empty.pipe';
 
 /////Keg List////
@@ -11,7 +11,7 @@ import { EmptyPipe } from './empty.pipe';
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
   pipes: [EmptyPipe],
-  directives: [KegComponent, NewKegComponent, EditKegDetailsComponent],
+  directives: [KegComponent, NewKegComponent, ShowKegProgressComponent],
   templateUrl: 'app/keg-list.view.html'
 })
 
@@ -19,7 +19,7 @@ export class KegListComponent {
   public kegList: Keg[];
   public onKegSelect: EventEmitter<Keg>;
   public selectedKeg: Keg;
-  // public filterType: string = "notEmpty";
+  public filterType: string = "notEmpty";
   constructor(){
     this.onKegSelect = new EventEmitter();
   }
