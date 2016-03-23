@@ -1,0 +1,10 @@
+export class NewKegComponent {
+  public onAddNewKeg: EventEmitter<Keg>;
+    constructor(){
+      this.onAddNewKeg = new EventEmitter();
+    }
+    addKeg(brewerName: HTMLInputElement, beerName: HTMLInputElement, beerType: HTMLInputElement) {
+
+      this.onAddNewKeg.emit([brewerName.value, beerName.value, beerType.value]);
+
+    }

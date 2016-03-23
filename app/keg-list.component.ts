@@ -25,11 +25,11 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  createKeg(brewerName: string, beerName: string, beerType: string, kegLevel: number): void {
-    this.kegList.push(
-      new Keg(brewerName, beerName, beerType, kegLevel)
-    ); console.log(this.kegList)
+  createKeg(newKeg: Keg): void {
+    console.log(newKeg);
+    this.kegList.push(newKeg);
   }
+  ////since new-keg.component had created a new Object the createKeg method needs to be told to expect an object (rather than each individual propery since that is not what we are sending)
   // onChange(filterOption){
   //   this.filterType = filterOption;
   //   console.log(this.filterType);

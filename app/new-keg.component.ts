@@ -21,8 +21,14 @@ export class NewKegComponent {
       this.onAddNewKeg = new EventEmitter();
     }
     addKeg(brewerName: HTMLInputElement, beerName: HTMLInputElement, beerType: HTMLInputElement) {
-
-      this.onAddNewKeg.emit([brewerName.value, beerName.value, beerType.value]);
-
+      var newKeg: Keg = new Keg(brewerName.value, beerName.value, beerType.value);
+      this.onAddNewKeg.emit(newKeg);
     }
 }
+
+
+///tried brewerName, beerName, beerType: HTMLINPUTElement
+
+///tried this: working addKeg file that would post the info in the list but ran into the same issue as above
+
+///tried var newKeg: Keg = new Keg(brewerName.value, beerName.value, beerType.value);
