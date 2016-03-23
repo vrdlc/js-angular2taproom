@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { Keg } from './keg.model';////TaskComponent////
+import { Keg } from './keg.model';////KegComponent////
 
 
 @Component({
@@ -9,7 +9,9 @@ import { Keg } from './keg.model';////TaskComponent////
   <div>
     <input *ngIf="keg.empty" type="checkbox" checked (click)="toggleDone(false)"/>
     <input *ngIf="!keg.empty" type="checkbox" (click)="toggleDone(true)"/>
-    <label>{{ keg.description }}</label>
+    <label>{{ keg.brewerName }}</label>
+    <label>{{ keg.beerName }}</label>
+    <label>{{ keg.beerType }}</label>
   </div>
   `
 })
