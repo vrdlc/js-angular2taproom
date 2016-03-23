@@ -9,17 +9,7 @@ import { NewKegComponent } from './new-keg.component';
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
   directives: [KegComponent, NewKegComponent],
-  // templateUrl: 'app/keg-list.view.html'
-  template: `
-  <keg-display *ngFor="#currentKeg of kegList"
-    (click)="kegClicked(currentKeg)"
-    [class.selected]="currentKeg === selectedKeg"
-    [keg]="currentKeg">
-  </keg-display>
-  <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
-  </edit-keg-details>
-  <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
-  `
+  templateUrl: 'app/keg-list.view.html'
 })
 
 export class KegListComponent {
