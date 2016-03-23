@@ -1,8 +1,9 @@
 import {Component, EventEmitter} from 'angular2/core';
+import { Keg } from './keg.model';
 
 @Component({
   selector: 'new-keg',
-  outputs: ['on SubmitNewKeg'],
+  outputs: ['onAddNewKeg'],
   template: `
   <div class="keg-form">
   <h3>Add new keg:</h3>
@@ -15,9 +16,14 @@ import {Component, EventEmitter} from 'angular2/core';
 })
 
 export class NewKegComponent {
-  public onAddNewKeg: EventEmitter<string>;
+  public onAddNewKeg: EventEmitter<String>;
     constructor(){
       this.onAddNewKeg = new EventEmitter();
     }
-    addKeg()
+    addKeg(userBrewer, userBeer, userType: HTMLInputElement) {
+      console.log(userBrewer.value, userType.value, userBeer.value);
+      this.onAddNewKeg.emit(userBrewer.value);
+      this.onAddNewKeg.emit(userBeer.value);
+      this.onAddNewKeg.emit(userType.value);
+    }
 }
