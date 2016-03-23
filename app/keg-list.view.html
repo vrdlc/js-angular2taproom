@@ -1,4 +1,10 @@
-<keg-display *ngFor="#currentKeg of kegList"
+<select (change)="onChange($event.target.value)" class="filter">
+  <option value="all">Show All</option>
+  <option value="empty">Blown Kegs</option>
+  <option value="notEmpty">Tapped Kegs</option>
+</select>
+
+<keg-display *ngFor="#currentKeg of kegList | empty: filterType"
   (click)="kegClicked(currentKeg)"
   [class.selected]="currentKeg === selectedKeg"
   [keg]="currentKeg">

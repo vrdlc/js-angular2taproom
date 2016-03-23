@@ -3,12 +3,14 @@ import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
 import { EditKegDetailsComponent } from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
+import { EmptyPipe } from './empty.pipe';
 
 /////Keg List////
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
+  pipes: [EmptyPipe],
   directives: [KegComponent, NewKegComponent, EditKegDetailsComponent],
   templateUrl: 'app/keg-list.view.html'
 })
@@ -28,11 +30,13 @@ export class KegListComponent {
   }
   createKeg(newKeg: Keg): void {
     console.log(newKeg);
-    this.kegList.push(newKeg);
+    this.kegList.push(newKeg);//SEE * BELOW
   }
-  ////since new-keg.component had created a new Object the createKeg method needs to be told to expect an object (rather than each individual propery since that is not what we are sending)
-  // onChange(filterOption){
-  //   this.filterType = filterOption;
-  //   console.log(this.filterType);
-  // }
+  onChange(filterOption){
+    this.filterType = filterOption;
+    console.log(this.filterType);
+  }
 }
+
+
+//// * since new-keg.component had created a new Object the createKeg method needs to be told to expect an object (rather than each individual propery since that is not what we are sending)
