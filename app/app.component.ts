@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { Keg } from './keg.model';
 
 @Component({
   selector: 'my-app',
@@ -14,7 +15,7 @@ export class AppComponent {
     this.kegs = [
       new Keg("Widmer Brewery", "Omission IPA", "IPA", 127),
       new Keg("Rogue Brewery", "Arrogant Bastard Ale", "Ale", 97),
-      new Keg("10 Barrel", "Sinistor Black Ale", "Ale" 20)
+      new Keg("10 Barrel", "Sinistor Black Ale", "Ale", 20)
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {

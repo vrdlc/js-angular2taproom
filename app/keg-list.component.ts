@@ -1,9 +1,10 @@
 import { Component, EventEmitter } from 'angular2/core';
-
+import { KegComponent } from './keg.component';
+import { Keg } from './keg.model';
 
 /////Keg List////
 @Component({
-  selctor: 'keg-list',
+  selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onTaskSelect'],
   directives: [KegComponent],
@@ -23,9 +24,9 @@ export class KegListComponent {
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
   }
-  createKeg(brewerName: string, beerName: string, beerType: string): void {
+  createKeg(brewerName: string, beerName: string, beerType: string, kegLevel: number): void {
     this.kegList.push(
-      new Keg(brewerName, beerName, beerType)
+      new Keg(brewerName, beerName, beerType, kegLevel) //DOES THIS INSTANTIATE WITH 127 PINTS?
     );
   }
   onChange(filterOption){
