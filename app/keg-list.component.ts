@@ -1,6 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
+import { EditKegDetailsComponent } from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
 
 /////Keg List////
@@ -8,7 +9,7 @@ import { NewKegComponent } from './new-keg.component';
   selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
-  directives: [KegComponent, NewKegComponent],
+  directives: [KegComponent, NewKegComponent, EditKegDetailsComponent],
   templateUrl: 'app/keg-list.view.html'
 })
 
