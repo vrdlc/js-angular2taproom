@@ -1,12 +1,28 @@
+<p>Filter Keg Status:</p>
 <select (change)="onChange($event.target.value)" class="filter">
   <option value="all">Show All</option>
   <option value="empty">Blown Kegs</option>
   <option value="notEmpty">Tapped Kegs</option>
 </select><br><br>
 
+<p>Filter Keg Type:</p>
+<select (change)="onChange($event.target.value)" class="filter">
+  <option value="all">Show All</option>
+  <option value="Ale">Ale</option>
+  <option value="IPA">IPA</option>
+  <option value="Stout">Stout</option>
+  <option value="Porter">Porter</option>
+  <option value="Amber">Amber</option>
+  <option value="Pilsner">Pilsner</option>
+  <option value="Wheat">Wheat</option>
+  <option value="Seasonal">Seasonal</option>
+</select><br><br>
 
 
-<keg-display *ngFor="#currentKeg of kegList | empty: filterType"
+<!--| empty: filterType
+  OTHER PIPE CAN BE STACKED BELOW -->
+
+<keg-display *ngFor="#currentKeg of kegList | type: filterBeerType | empty: filterEmptyType"
   (click)="kegClicked(currentKeg)"
   [class.selected]="currentKeg === selectedKeg"
   [keg]="currentKeg">

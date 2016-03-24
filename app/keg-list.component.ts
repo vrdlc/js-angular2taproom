@@ -4,13 +4,14 @@ import { Keg } from './keg.model';
 import { NewKegComponent } from './new-keg.component';
 import { ShowKegProgressComponent } from './show-keg-progress.component';
 import { EmptyPipe } from './empty.pipe';
+import { TypePipe } from './type.pipe';
 
 /////Keg List////
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
-  pipes: [EmptyPipe],
+  pipes: [EmptyPipe, TypePipe],
   directives: [KegComponent, NewKegComponent, ShowKegProgressComponent],
   templateUrl: 'app/keg-list.view.html'
 })
@@ -20,7 +21,8 @@ export class KegListComponent {
   public onKegSelect: EventEmitter<Keg>;
   public selectedKeg: Keg;
   public keg: Keg;
-  public filterType: string = "notEmpty";
+  public filterEmptyType: string = "notEmpty";
+  public filterBeerType : string = "all";
   constructor(){
     this.onKegSelect = new EventEmitter();
   }
@@ -34,8 +36,9 @@ export class KegListComponent {
     this.kegList.push(newKeg);//SEE * BELOW
   }
   onChange(filterOption){
-    this.filterType = filterOption;
-    console.log(this.filterType);
+    this.filterEmptyType = filterOption;
+    this.filterBeerType = filterOption;
+    console.log(this.filterBeerType);
   }
 
 }

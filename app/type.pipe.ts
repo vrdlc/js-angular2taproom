@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
 export class TypePipe implements PipeTransform {
   transform(input: Keg[], args) {
     var kegType = args[0];
-    if(kegType === 'Lager') {
+    if(kegType === 'Ale') {
       return input.filter((keg) => {
         return keg.beerType === kegType;
       });
