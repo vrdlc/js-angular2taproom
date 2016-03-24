@@ -25,7 +25,6 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
 })
 export class ShowKegProgressComponent {
   public keg: Keg;
-
   reduceByPint(): void {
     if (this.keg.kegLevel <= 0){
       this.keg.kegLevel === 0;
@@ -43,6 +42,4 @@ export class ShowKegProgressComponent {
   kegLevelByColor(keg): void {
     var fillLevel = keg.kegLevel;
   }
-
-///http://arjunu.com/2016/01/basic-angular-2-off-click-directive/ USE THIS WEBSITE TO HELP WITH CLICK HIDE/SHOW
 }

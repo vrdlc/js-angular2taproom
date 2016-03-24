@@ -8,6 +8,7 @@ import { Keg } from './keg.model';
   template: `
     <div class="container">
       <h1>TapHouse Keg Levels!</h1><br>
+      <p>Filter Keg Status:</p>
       <keg-list [kegList]="kegs"
       (onKegSelect)="kegWasSelected($event)">
      </keg-list>

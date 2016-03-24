@@ -9,7 +9,7 @@ import { Keg } from './keg.model';////KegComponent////
   <div>
     <input *ngIf="keg.empty" type="checkbox" checked (click)="toggleDone(false)"/>
     <input *ngIf="!keg.empty" type="checkbox" (click)="toggleDone(true)"/>
-    <label>{{ keg.brewerName }}</label>
+    <label>{{ keg.brewerName }}'s</label>
     <label>{{ keg.beerName }}</label>
     <label>{{ keg.beerType }}</label>
   </div>
