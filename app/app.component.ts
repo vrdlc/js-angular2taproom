@@ -7,16 +7,20 @@ import { Keg } from './keg.model';
   directives: [KegListComponent],
   template: `
     <div class="container">
+    <div >
       <h1>TapHouse Keg Levels!</h1><br>
       <keg-list [kegList]="kegs"
       (onKegSelect)="kegWasSelected($event)">
      </keg-list>
     </div>
+    </div>
   `
 })
+// [ngStyle] = "kegLevelByColor()"
 
 export class AppComponent {
   public kegs: Keg[];
+  public keg: Keg;
   constructor(){
     this.kegs = [
       new Keg("Widmer Brewery", "Omission", "IPA", 127),
@@ -25,6 +29,17 @@ export class AppComponent {
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {
+  }
+  kegLevelByColor(keg): void {
+    var textColor = { color: "green" };
+    var fillLevel = keg.kegLevel;
+    if (fillLevel <= 50) {
+      textColor = { color: "yellow" }
+    } else if (fillLevel <= 31) {
+      textColor = { color: "red"}
+    } else if (fillLevel = 0) {
+      textColor = { color: "white" }
+    }
   }
 }
 

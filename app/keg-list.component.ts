@@ -37,17 +37,7 @@ export class KegListComponent {
     this.filterType = filterOption;
     console.log(this.filterType);
   }
-  kegLevelByColor(): void {
-    var textColor = { color: "green" };
-    var fillLevel = this.keg.kegLevel;
-    if (fillLevel <= 50) {
-      textColor = { color: "yellow" }
-    } else if (fillLevel <= 31) {
-      textColor = { color: "red"}
-    } else if (fillLevel = 0) {
-      textColor = { color: "white" }
-    }
-  }
+
 }
 
 
