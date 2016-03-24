@@ -43,4 +43,5 @@ select {
 }
 .progress-bar {
   background-image: url(/resources/imgs/beer.jpg);
+  background-repeat: no-repeat;
 }
