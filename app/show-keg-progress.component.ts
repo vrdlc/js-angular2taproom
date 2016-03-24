@@ -9,15 +9,13 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
   template:`
   <div class="kegProgress">
     <h3>{{ keg.brewerName }}'s {{ keg.beerName }} Progress: {{ (keg.kegLevel/127*100).toFixed(0) }}% </h3>
+    <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{keg.kegLevel/127*100}}%">
+    </div>
+    </div>
     <button (click)="reduceByPint()" class="btn btn-info pint">Sold a pint?</button>
     <button (click)="reduceByGrowler()" class="btn btn-info growler">Sold a growler?</button>
     <br><br>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{keg.kegLevel/127*100}}%">
-          </div>
-
-    </div>
   </div>
   `
 })

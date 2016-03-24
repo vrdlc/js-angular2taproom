@@ -11,7 +11,7 @@ import { Keg } from './keg.model';
   <input placeholder="Brewer Name" #newBrewer class="form-control"><br>
   <input placeholder="Beer Name" #newBeer class="form-control"><br>
 
- <p>Select Beer Type</p>
+ <h3>Select Beer Type</h3>
   <select class="beerTypeDropdown form-control" #newType>
   <option value="Ale">Ale</option>
   <option value="IPA">IPA</option>
@@ -24,7 +24,7 @@ import { Keg } from './keg.model';
   </select>
 
 
-  <button (click)="addKeg(newBrewer, newBeer, newType)" class="btn-success add-button">Add</button><br><br>
+  <button (click)="addKeg(newBrewer, newBeer, newType)" class="btn-info btn add-button">Add</button><br><br>
 
   `
 })

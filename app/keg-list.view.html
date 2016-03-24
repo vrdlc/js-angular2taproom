@@ -1,12 +1,12 @@
 <div class = "col-md-6">
-<p>Filter Keg Status:</p>
+<h3>Filter Keg Status:</h3>
 <select (change)="onChange($event.target.value)" class="filter form-control">
   <option value="all">Show All</option>
   <option value="empty">Blown Kegs</option>
   <option value="notEmpty">Tapped Kegs</option>
 </select><br><br>
 
-<p>Filter Keg Type:</p>
+<h3>Filter Keg Type:</h3>
 <select (change)="onChange($event.target.value)" class="filter form-control">
   <option value="all">Show All</option>
   <option value="Ale">Ale</option>
@@ -22,6 +22,13 @@
 <!--| empty: filterType
   OTHER PIPE CAN BE STACKED BELOW -->
 
+<!-- <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
+</edit-keg-details> -->
+<new-keg (onAddNewKeg)="createKeg($event)"></new-keg>
+</div>
+
+<div class = "col-md-6">
+  <p>Currently on Tap</p>
 <keg-display *ngFor="#currentKeg of kegList | type: filterBeerType | empty: filterEmptyType"
   (click)="kegClicked(currentKeg)"
   [class.selected]="currentKeg === selectedKeg"
@@ -31,8 +38,4 @@
 
 <show-keg-progress *ngIf="selectedKeg" [keg]="selectedKeg">
 </show-keg-progress>
-
-<!-- <edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg">
-</edit-keg-details> -->
-<new-keg (onAddNewKeg)="createKeg($event)"></new-keg>
 </div>
