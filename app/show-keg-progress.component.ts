@@ -9,8 +9,8 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
   template:`
   <div class="kegProgress">
     <h3>{{ keg.brewerName }}'s {{ keg.beerName }} Progress: {{ (keg.kegLevel/127*100).toFixed(0) }}% </h3>
-    <button (click)="reduceByPint()" class="btn btn-info">Sold a pint?</button>
-    <button (click)="reduceByGrowler()" class="btn btn-info">Sold a growler?</button>
+    <button (click)="reduceByPint()" class="btn btn-info pint">Sold a pint?</button>
+    <button (click)="reduceByGrowler()" class="btn btn-info growler">Sold a growler?</button>
     <br><br>
     <div class = "row">
       <div class="col-md-6">
@@ -27,9 +27,15 @@ export class ShowKegProgressComponent {
   public keg: Keg;
 
   reduceByPint(): void {
-    this.keg.kegLevel --;
+    if (this.keg.kegLevel <= 0){
+      this.keg.kegLevel === 0;
+    } else
+      this.keg.kegLevel --;
   }
   reduceByGrowler(): void {
+    if (this.keg.kegLevel <= 0){
+      this.keg.kegLevel === 0;
+    } else
     this.keg.kegLevel -=4;
   }
   kegLevelByColor(keg): void {
