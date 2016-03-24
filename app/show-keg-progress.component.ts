@@ -19,7 +19,7 @@ export class ShowKegProgressComponent {
   reduceByPint(): void {
     this.keg.kegLevel --;
   }
-  reducebyGrowler(): void {
+  reduceByGrowler(): void {
     this.keg.kegLevel -=4; ////this does not work. number notation of -= is correct though
   }
 }
