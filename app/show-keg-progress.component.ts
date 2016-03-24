@@ -8,16 +8,19 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
   directives: [EditKegDetailsComponent],
   template:`
   <div class="kegProgress">
-     <h3>{{ keg.brewerName }}'s {{ keg.beerName }} Progress: {{ (keg.kegLevel/127*100).toFixed(0) }} % </h3>
-     <button (click)="reduceByPint()" class="btn btn-info">Sold a pint?</button>
-     <button (click)="reduceByGrowler()" class="btn btn-info">Sold a growler?</button>
-
-     <div class="progress">
-       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{keg.kegLevel}}%">
-         <span class="sr-only">40% Complete (success)</span>
-       </div>
-     </div>
-   </div>
+    <h3>{{ keg.brewerName }}'s {{ keg.beerName }} Progress: {{ (keg.kegLevel/127*100).toFixed(0) }}% </h3>
+    <button (click)="reduceByPint()" class="btn btn-info">Sold a pint?</button>
+    <button (click)="reduceByGrowler()" class="btn btn-info">Sold a growler?</button>
+    <br><br>
+    <div class = "row">
+      <div class="col-md-6">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{keg.kegLevel/127*100}}%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   `
 })
 export class ShowKegProgressComponent {

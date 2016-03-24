@@ -28,17 +28,7 @@ export class AppComponent {
   }
   kegWasSelected(clickedKeg: Keg): void {
   }
-  kegLevelByColor(keg): void {
-    var textColor = { color: "green" };
-    var fillLevel = keg.kegLevel;
-    if (fillLevel <= 50) {
-      textColor = { color: "yellow" }
-    } else if (fillLevel <= 31) {
-      textColor = { color: "red"}
-    } else if (fillLevel = 0) {
-      textColor = { color: "white" }
-    }
-  }
+
 }
 
 
