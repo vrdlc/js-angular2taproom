@@ -29,12 +29,14 @@ export class ShowKegProgressComponent {
   reduceByPint(): void {
     if (this.keg.kegLevel <= 0){
       this.keg.kegLevel === 0;
+      alert("Time to Order More " +  this.keg.beerName + " from " + this.keg.brewerName + "!!")
     } else
       this.keg.kegLevel --;
   }
   reduceByGrowler(): void {
     if (this.keg.kegLevel <= 0){
       this.keg.kegLevel === 0;
+      alert("Time to Order More " +  this.keg.beerName + " from " + this.keg.brewerName + "!!")
     } else
     this.keg.kegLevel -=4;
   }
