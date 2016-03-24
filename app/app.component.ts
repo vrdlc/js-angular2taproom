@@ -7,12 +7,10 @@ import { Keg } from './keg.model';
   directives: [KegListComponent],
   template: `
     <div class="container">
-    <div >
       <h1>TapHouse Keg Levels!</h1><br>
       <keg-list [kegList]="kegs"
       (onKegSelect)="kegWasSelected($event)">
      </keg-list>
-    </div>
     </div>
   `
 })
