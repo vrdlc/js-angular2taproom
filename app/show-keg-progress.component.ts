@@ -12,13 +12,11 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
     <button (click)="reduceByPint()" class="btn btn-info pint">Sold a pint?</button>
     <button (click)="reduceByGrowler()" class="btn btn-info growler">Sold a growler?</button>
     <br><br>
-    <div class = "row">
-      <div class="col-md-6">
+
         <div class="progress">
           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{keg.kegLevel/127*100}}%">
           </div>
-        </div>
-      </div>
+
     </div>
   </div>
   `

@@ -14,3 +14,7 @@ input {
 keg-list {
   font-size: 20px;
 }
+
+select {
+  width: 100%;
+}

@@ -7,16 +7,28 @@ import { Keg } from './keg.model';
   template: `
   <div class="keg-form">
   <h3>Add new keg:</h3>
-  <div class="row">
-  <div class="col col-md-6 input-group-lg" >
+
   <input placeholder="Brewer Name" #newBrewer class="form-control"><br>
   <input placeholder="Beer Name" #newBeer class="form-control"><br>
-  <input placeholder="Beer Type" #newType class="form-control"><br>
-  <button (click)="addKeg(newBrewer, newBeer, newType)" class="btn-success add-button">Add</button>
-  </div>
-  </div>
+
+ <p>Select Beer Type</p>
+  <select class="beerTypeDropdown form-control" #newType>
+  <option value="Ale">Ale</option>
+  <option value="IPA">IPA</option>
+  <option value="Stout">Stout</option>
+  <option value="Porter">Porter</option>
+  <option value="Amber">Amber</option>
+  <option value="Pilsner">Pilsner</option>
+  <option value="Wheat">Wheat</option>
+  <option value="Seasonal">Seasonal</option>
+  </select>
+
+
+  <button (click)="addKeg(newBrewer, newBeer, newType)" class="btn-success add-button">Add</button><br><br>
+
   `
 })
+///  <input placeholder="Beer Type" #newType class="form-control"><br>
 
 export class NewKegComponent {
   public onAddNewKeg: EventEmitter<Keg>;
