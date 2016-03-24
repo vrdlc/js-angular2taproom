@@ -19,6 +19,7 @@ export class KegListComponent {
   public kegList: Keg[];
   public onKegSelect: EventEmitter<Keg>;
   public selectedKeg: Keg;
+  public keg: Keg;
   public filterType: string = "notEmpty";
   constructor(){
     this.onKegSelect = new EventEmitter();
@@ -36,7 +37,19 @@ export class KegListComponent {
     this.filterType = filterOption;
     console.log(this.filterType);
   }
+  kegLevelByColor(): void {
+    var textColor = { color: "green" };
+    var fillLevel = this.keg.kegLevel;
+    if (fillLevel <= 50) {
+      textColor = { color: "yellow" }
+    } else if (fillLevel <= 31) {
+      textColor = { color: "red"}
+    } else if (fillLevel = 0) {
+      textColor = { color: "white" }
+    }
+  }
 }
+
 
 
 //// * since new-keg.component had created a new Object the createKeg method needs to be told to expect an object (rather than each individual propery since that is not what we are sending)

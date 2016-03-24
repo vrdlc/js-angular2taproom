@@ -16,13 +16,13 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
 })
 export class ShowKegProgressComponent {
   public keg: Keg;
+
   reduceByPint(): void {
     this.keg.kegLevel --;
   }
   reduceByGrowler(): void {
-    this.keg.kegLevel -=4; ////this does not work. number notation of -= is correct though
+    this.keg.kegLevel -=4;
   }
-}
-
 
 ///http://arjunu.com/2016/01/basic-angular-2-off-click-directive/ USE THIS WEBSITE TO HELP WITH CLICK HIDE/SHOW
+}
