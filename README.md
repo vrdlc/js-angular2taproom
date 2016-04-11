@@ -34,7 +34,6 @@ _If you have any questions, concerns, or feedback, please contact the author thr
 * _Dependencies were handled with [npm](https://www.npmjs.com/) and [Bower](http://bower.io/)._
 * _[Gulp](http://gulpjs.com/) is an awesome asset pipeline used in this project._
 * _[Bootstrap](http://getbootstrap.com/) built the basic CSS seen on the page, with minimal alteration by me._
-* _[Moment.js](http://momentjs.com/) helped make the times readable._
 * _[Github](https://www.github.com) is a great place to host any code you're working on or wish to share with the world._ They also provided the [API] (https://developer.github.com/v3/) you saw in action in this project._
 * _Git was used in the terminal to upload my progress to GitHub._
 * _And, of course, the basic code was written in HTML, CSS, and Javascript, in the Atom text editor, alongside a terminal program._
